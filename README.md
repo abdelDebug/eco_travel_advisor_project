@@ -1,4 +1,4 @@
-# Eco Travel Advisor
+# Eco Travel Advisor developed by Dr. Abdelaziz Triki
 
 ## Project overview
 
