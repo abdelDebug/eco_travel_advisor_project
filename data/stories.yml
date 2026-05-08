@@ -1,0 +1,215 @@
+version: "3.1"
+
+stories:
+  - story: complete sustainable city break
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: start_trip_planning
+      - action: utter_ask_destination
+      - intent: provide_destination
+        entities:
+          - destination: Amsterdam
+      - slot_was_set:
+          - destination: Amsterdam
+      - action: utter_ask_origin
+      - intent: provide_origin
+        entities:
+          - origin: Berlin
+      - slot_was_set:
+          - origin: Berlin
+      - action: utter_ask_dates
+      - intent: provide_dates
+        entities:
+          - travel_date: 12 June
+          - return_date: 15 June
+      - slot_was_set:
+          - travel_date: 12 June
+          - return_date: 15 June
+      - action: utter_ask_budget
+      - intent: provide_budget
+        entities:
+          - budget: "700"
+      - slot_was_set:
+          - budget: "700"
+      - action: utter_ask_sustainability_level
+      - intent: provide_sustainability_preference
+        entities:
+          - sustainability_level: high
+      - slot_was_set:
+          - sustainability_level: high
+      - action: utter_ask_transport_mode
+      - intent: provide_transport_mode
+        entities:
+          - transport_mode: train
+      - slot_was_set:
+          - transport_mode: train
+      - action: action_collect_trip_preferences
+      - action: action_recommend_transport
+      - action: action_recommend_hotels
+      - action: action_recommend_cultural_experiences
+
+  - story: rural eco tour
+    steps:
+      - intent: start_trip_planning
+      - action: utter_ask_destination
+      - intent: provide_destination
+        entities:
+          - destination: Ljubljana
+      - slot_was_set:
+          - destination: Ljubljana
+      - action: utter_ask_origin
+      - intent: provide_origin
+        entities:
+          - origin: Vienna
+      - slot_was_set:
+          - origin: Vienna
+      - action: utter_ask_dates
+      - intent: provide_dates
+        entities:
+          - travel_date: 4 August
+          - return_date: 10 August
+      - slot_was_set:
+          - travel_date: 4 August
+          - return_date: 10 August
+      - action: utter_ask_budget
+      - intent: provide_budget
+        entities:
+          - budget: "900"
+      - slot_was_set:
+          - budget: "900"
+      - action: utter_ask_sustainability_level
+      - intent: provide_sustainability_preference
+        entities:
+          - sustainability_level: high
+      - slot_was_set:
+          - sustainability_level: high
+      - action: utter_ask_transport_mode
+      - intent: provide_transport_mode
+        entities:
+          - transport_mode: train
+      - slot_was_set:
+          - transport_mode: train
+      - action: action_collect_trip_preferences
+      - action: action_recommend_transport
+      - action: action_recommend_hotels
+      - action: action_recommend_cultural_experiences
+
+  - story: carbon conscious business trip
+    steps:
+      - intent: start_trip_planning
+      - action: utter_ask_destination
+      - intent: provide_destination
+        entities:
+          - destination: Copenhagen
+      - slot_was_set:
+          - destination: Copenhagen
+      - action: utter_ask_origin
+      - intent: provide_origin
+        entities:
+          - origin: London
+      - slot_was_set:
+          - origin: London
+      - action: utter_ask_dates
+      - intent: provide_dates
+        entities:
+          - travel_date: 8 September
+          - return_date: 9 September
+      - slot_was_set:
+          - travel_date: 8 September
+          - return_date: 9 September
+      - action: utter_ask_budget
+      - intent: provide_budget
+        entities:
+          - budget: "1200"
+      - slot_was_set:
+          - budget: "1200"
+      - action: utter_ask_sustainability_level
+      - intent: provide_sustainability_preference
+        entities:
+          - sustainability_level: medium
+      - slot_was_set:
+          - sustainability_level: medium
+      - action: utter_ask_transport_mode
+      - intent: provide_transport_mode
+        entities:
+          - transport_mode: train
+      - slot_was_set:
+          - transport_mode: train
+      - action: action_collect_trip_preferences
+      - action: action_recommend_transport
+      - action: action_recommend_hotels
+      - action: action_recommend_cultural_experiences
+      - intent: ask_carbon_footprint
+      - action: action_calculate_carbon_footprint
+
+  - story: use current location as travel origin
+    steps:
+      - intent: start_trip_planning
+      - action: utter_ask_destination
+      - intent: provide_destination
+        entities:
+          - destination: Amsterdam
+      - slot_was_set:
+          - destination: Amsterdam
+      - action: utter_ask_origin
+      - intent: provide_user_location
+        entities:
+          - location: Berlin
+      - slot_was_set:
+          - origin: Berlin
+          - user_location: Berlin
+      - action: utter_ask_dates
+
+  - story: accommodation recommendation
+    steps:
+      - intent: ask_accommodation_options
+      - action: action_recommend_hotels
+      - intent: provide_accommodation_type
+        entities:
+          - accommodation_type: eco hotel
+      - slot_was_set:
+          - accommodation_type: eco hotel
+      - action: action_recommend_hotels
+
+  - story: transport recommendation
+    steps:
+      - intent: ask_transport_options
+      - action: action_recommend_transport
+      - intent: provide_transport_mode
+        entities:
+          - transport_mode: bus
+      - slot_was_set:
+          - transport_mode: bus
+      - action: action_recommend_transport
+
+  - story: carbon footprint calculation
+    steps:
+      - intent: provide_transport_mode
+        entities:
+          - transport_mode: flight
+      - slot_was_set:
+          - transport_mode: flight
+      - intent: ask_carbon_footprint
+      - action: action_calculate_carbon_footprint
+
+  - story: cultural experience recommendation
+    steps:
+      - intent: ask_cultural_experiences
+      - action: action_recommend_cultural_experiences
+
+  - story: user asks for human advisor
+    steps:
+      - intent: request_human_handover
+      - action: action_package_handover_context
+      - action: utter_handover_started
+
+  - story: ambiguous message flow
+    steps:
+      - intent: nlu_fallback
+      - action: action_two_stage_clarification
+
+  - story: out of scope message flow
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope

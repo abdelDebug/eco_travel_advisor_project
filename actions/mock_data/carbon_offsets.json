@@ -1,0 +1,23 @@
+[
+  {
+    "id": "offset_001",
+    "name": "Verified Reforestation Portfolio",
+    "price_per_tonne_eur": 18,
+    "standard": "VCS style mock standard",
+    "description": "Mock offset option. Used only for demonstration, not a real purchasing link."
+  },
+  {
+    "id": "offset_002",
+    "name": "Renewable Energy Community Fund",
+    "price_per_tonne_eur": 22,
+    "standard": "Gold Standard style mock standard",
+    "description": "Mock renewable energy offset supporting community energy projects."
+  },
+  {
+    "id": "offset_003",
+    "name": "Peatland Restoration Fund",
+    "price_per_tonne_eur": 27,
+    "standard": "Biodiversity co benefit mock standard",
+    "description": "Mock nature based option with biodiversity and water retention benefits."
+  }
+]

@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+.venv-review/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.rasa/
+.sixth/
+models/
+results/
+logs/
+.ipynb_checkpoints/
+*.tar.gz
+.DS_Store

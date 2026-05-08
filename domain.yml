@@ -1,0 +1,195 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - start_trip_planning
+  - provide_destination
+  - provide_origin
+  - provide_dates
+  - provide_budget
+  - provide_sustainability_preference
+  - provide_transport_mode
+  - provide_accommodation_type
+  - provide_user_location
+  - ask_transport_options
+  - ask_accommodation_options
+  - ask_carbon_footprint
+  - ask_cultural_experiences
+  - ask_privacy_notice
+  - ask_accessibility_support
+  - request_human_handover
+  - out_of_scope
+  - thank_you
+  - nlu_fallback
+
+entities:
+  - destination
+  - origin
+  - travel_date
+  - return_date
+  - budget
+  - sustainability_level
+  - transport_mode
+  - accommodation_type
+  - location
+
+slots:
+  destination:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: destination
+  origin:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: origin
+      - type: from_entity
+        entity: location
+  travel_date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: travel_date
+  return_date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: return_date
+  budget:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: budget
+  sustainability_level:
+    type: categorical
+    values:
+      - low
+      - medium
+      - high
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: sustainability_level
+  transport_mode:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: transport_mode
+  accommodation_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: accommodation_type
+  user_location:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location
+  carbon_score:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: custom
+  selected_option:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: custom
+  recommended_options:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: custom
+  handover_required:
+    type: bool
+    influence_conversation: true
+    initial_value: false
+    mappings:
+      - type: custom
+  conversation_summary:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: custom
+  clarification_attempts:
+    type: float
+    influence_conversation: true
+    initial_value: 0
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hello. I am your Eco Travel Advisor. I can help plan a lower carbon trip with transport, accommodation, cultural activities, and offset options."
+      buttons:
+        - title: "Plan a sustainable trip"
+          payload: "/start_trip_planning"
+        - title: "Compare transport options"
+          payload: "/ask_transport_options"
+        - title: "Talk to a human advisor"
+          payload: "/request_human_handover"
+  utter_ask_destination:
+    - text: "Which destination are you planning to visit?"
+  utter_ask_origin:
+    - text: "Where will you travel from?"
+  utter_ask_dates:
+    - text: "What are your travel dates? Please provide a departure date and a return date."
+  utter_ask_budget:
+    - text: "What is your approximate travel budget?"
+  utter_ask_sustainability_level:
+    - text: "How strong is your sustainability preference: low, medium, or high?"
+      buttons:
+        - title: "Low"
+          payload: '/provide_sustainability_preference{"sustainability_level":"low"}'
+        - title: "Medium"
+          payload: '/provide_sustainability_preference{"sustainability_level":"medium"}'
+        - title: "High"
+          payload: '/provide_sustainability_preference{"sustainability_level":"high"}'
+  utter_ask_transport_mode:
+    - text: "Do you prefer train, bus, flight, car, walking, or cycling?"
+      buttons:
+        - title: "Train"
+          payload: '/provide_transport_mode{"transport_mode":"train"}'
+        - title: "Bus"
+          payload: '/provide_transport_mode{"transport_mode":"bus"}'
+        - title: "Flight"
+          payload: '/provide_transport_mode{"transport_mode":"flight"}'
+        - title: "Car"
+          payload: '/provide_transport_mode{"transport_mode":"car"}'
+  utter_goodbye:
+    - text: "Goodbye. I hope your next trip is enjoyable, responsible, and lower carbon."
+  utter_handover_started:
+    - text: "I have prepared your conversation context for a human sustainable travel advisor."
+  utter_privacy_notice:
+    - text: "Privacy notice: this demo uses only the trip details you provide in the conversation. API keys must be stored in environment variables, not in source code. Do not enter sensitive personal data in this academic prototype."
+  utter_accessibility_support:
+    - text: "Accessibility support: the frontend uses readable labels, plain language, button alternatives, and colour labels that are also written as text for users who cannot rely on colour alone."
+  utter_thank_you:
+    - text: "You are welcome."
+  utter_out_of_scope:
+    - text: "I can help with sustainable travel planning. I cannot help with unrelated requests, but I can compare transport, hotels, carbon footprint, cultural activities, or arrange handover."
+
+actions:
+  - action_collect_trip_preferences
+  - action_recommend_transport
+  - action_calculate_carbon_footprint
+  - action_recommend_hotels
+  - action_recommend_cultural_experiences
+  - action_rank_sustainable_options
+  - action_package_handover_context
+  - action_default_fallback
+  - action_two_stage_clarification
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

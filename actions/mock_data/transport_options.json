@@ -1,0 +1,52 @@
+[
+  {
+    "id": "transport_train",
+    "mode": "train",
+    "display_name": "Intercity train",
+    "price": 95,
+    "carbon_kg": 19.7,
+    "duration_hours": 6.5,
+    "relevance": 0.95,
+    "description": "Usually the best balance between low emissions, comfort, and city centre access."
+  },
+  {
+    "id": "transport_bus",
+    "mode": "bus",
+    "display_name": "Long distance coach",
+    "price": 45,
+    "carbon_kg": 13.0,
+    "duration_hours": 8.0,
+    "relevance": 0.88,
+    "description": "Low cost and low carbon, but often slower than rail."
+  },
+  {
+    "id": "transport_flight",
+    "mode": "flight",
+    "display_name": "Short haul flight",
+    "price": 130,
+    "carbon_kg": 122.4,
+    "duration_hours": 2.0,
+    "relevance": 0.7,
+    "description": "Fast, but normally has the highest carbon impact for short city trips."
+  },
+  {
+    "id": "transport_car",
+    "mode": "car",
+    "display_name": "Private car",
+    "price": 115,
+    "carbon_kg": 82.1,
+    "duration_hours": 7.0,
+    "relevance": 0.72,
+    "description": "Flexible, but emissions depend heavily on vehicle type and occupancy."
+  },
+  {
+    "id": "transport_cycling",
+    "mode": "cycling",
+    "display_name": "Cycling for local movement",
+    "price": 20,
+    "carbon_kg": 0.0,
+    "duration_hours": 1.0,
+    "relevance": 0.85,
+    "description": "Best for local journeys and last mile mobility, not suitable for every intercity route."
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "hotel_ams_001",
+    "name": "Canal Green Stay",
+    "destination": "Amsterdam",
+    "type": "eco hotel",
+    "nightly_price": 145,
+    "eco_rating": 92,
+    "carbon_kg_per_night": 7.5,
+    "certifications": [
+      "Green Key",
+      "renewable energy"
+    ],
+    "relevance": 0.96,
+    "description": "Certified eco hotel close to tram lines, bike rental, and local food markets."
+  },
+  {
+    "id": "hotel_ams_002",
+    "name": "Budget Bike Hostel",
+    "destination": "Amsterdam",
+    "type": "hostel",
+    "nightly_price": 62,
+    "eco_rating": 78,
+    "carbon_kg_per_night": 5.2,
+    "certifications": [
+      "waste reduction",
+      "bike friendly"
+    ],
+    "relevance": 0.87,
+    "description": "Affordable hostel with bike facilities and low water consumption measures."
+  },
+  {
+    "id": "hotel_cph_001",
+    "name": "Nordic Zero Hotel",
+    "destination": "Copenhagen",
+    "type": "business hotel",
+    "nightly_price": 185,
+    "eco_rating": 90,
+    "carbon_kg_per_night": 8.9,
+    "certifications": [
+      "Green Key",
+      "carbon reporting"
+    ],
+    "relevance": 0.91,
+    "description": "Business friendly hotel with renewable energy sourcing and public transport access."
+  },
+  {
+    "id": "hotel_lju_001",
+    "name": "Forest Edge Eco Lodge",
+    "destination": "Ljubljana",
+    "type": "eco lodge",
+    "nightly_price": 110,
+    "eco_rating": 95,
+    "carbon_kg_per_night": 4.8,
+    "certifications": [
+      "local sourcing",
+      "nature conservation"
+    ],
+    "relevance": 0.94,
+    "description": "Small rural lodge supporting local producers and protected area education."
+  },
+  {
+    "id": "hotel_global_001",
+    "name": "Urban Responsible Guesthouse",
+    "destination": "Any",
+    "type": "guesthouse",
+    "nightly_price": 88,
+    "eco_rating": 82,
+    "carbon_kg_per_night": 6.4,
+    "certifications": [
+      "energy efficient",
+      "local employment"
+    ],
+    "relevance": 0.8,
+    "description": "Mock fallback guesthouse for destinations not found in the local database."
+  }
+]

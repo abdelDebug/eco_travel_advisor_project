@@ -1,0 +1,260 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good evening
+      - hello there
+      - hi eco advisor
+      - can you help me?
+      - I need help with travel
+      - hey, I want sustainable travel advice
+
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - bye
+      - see you later
+      - thanks, bye
+      - end the chat
+      - talk to you later
+      - that is all for now
+      - I am done
+
+  - intent: start_trip_planning
+    examples: |
+      - I want to plan a sustainable trip
+      - help me plan an eco friendly holiday
+      - plan a green trip for me
+      - I need a sustainable tourism plan
+      - can you help with an eco travel itinerary?
+      - I want to organise a low carbon vacation
+      - build me a responsible travel plan
+      - I need an environmentally friendly trip
+      - start planning my trip
+      - let us plan a sustainable journey
+
+  - intent: provide_destination
+    examples: |
+      - I want to visit [Amsterdam](destination)
+      - My destination is [Barcelona](destination)
+      - I am going to [Copenhagen](destination)
+      - The trip is to [Lisbon](destination)
+      - We are planning to travel to [Vienna](destination)
+      - I would like recommendations for [Berlin](destination)
+      - destination [Paris](destination)
+      - it is [Prague](destination)
+      - I am thinking about [Ljubljana](destination)
+      - maybe [Stockholm](destination), but I am not sure
+
+  - intent: provide_origin
+    examples: |
+      - I am travelling from [Berlin](origin)
+      - My starting point is [Munich](origin)
+      - I will depart from [London](origin)
+      - origin is [Paris](origin)
+      - I live in [Hamburg](origin)
+      - We start in [Brussels](origin)
+      - from [Frankfurt](origin)
+      - leaving from [Madrid](origin)
+      - I am currently in [Rome](origin)
+      - our group starts from [Zurich](origin)
+
+  - intent: provide_dates
+    examples: |
+      - I will travel on [12 June](travel_date) and return on [15 June](return_date)
+      - from [1 July](travel_date) to [6 July](return_date)
+      - departure is [next Friday](travel_date), return is [next Monday](return_date)
+      - travel date [20 August](travel_date), return date [25 August](return_date)
+      - I leave on [5 May 2026](travel_date) and come back on [9 May 2026](return_date)
+      - between [10 September](travel_date) and [14 September](return_date)
+      - my dates are [3 April](travel_date) until [7 April](return_date)
+      - [18 October](travel_date) to [22 October](return_date)
+      - I only know I want to go in [June](travel_date)
+      - maybe [next month](travel_date), not sure about return
+
+  - intent: provide_budget
+    examples: |
+      - my budget is [500](budget) euros
+      - I can spend about [800](budget)
+      - budget [1200](budget)
+      - I have around [300](budget) EUR
+      - keep it under [1000](budget)
+      - maybe [700](budget) euros for the trip
+      - I prefer a low budget around [250](budget)
+      - maximum [1500](budget)
+      - no more than [600](budget)
+      - I am flexible, maybe [900](budget)
+
+  - intent: provide_sustainability_preference
+    examples: |
+      - my sustainability level is [high](sustainability_level)
+      - I want a [medium](sustainability_level) sustainability preference
+      - make sustainability [low](sustainability_level)
+      - I strongly prefer eco friendly options, [high](sustainability_level)
+      - balanced sustainability is fine, [medium](sustainability_level)
+      - I care mostly about price, [low](sustainability_level)
+      - choose the greenest option, [high](sustainability_level)
+      - I want a balanced approach, [medium](sustainability_level)
+      - sustainability is important but not absolute, [medium](sustainability_level)
+      - I want the lowest carbon choices, [high](sustainability_level)
+
+  - intent: provide_transport_mode
+    examples: |
+      - I prefer [train](transport_mode)
+      - use [bus](transport_mode) if possible
+      - compare [flight](transport_mode)
+      - I will travel by [car](transport_mode)
+      - I want to go by [cycling](transport_mode)
+      - [walking](transport_mode) is fine for local movement
+      - choose [train](transport_mode) for the main journey
+      - maybe [bus](transport_mode), maybe train
+      - I need a [flight](transport_mode) because of time
+      - [car](transport_mode) with two passengers
+
+  - intent: provide_accommodation_type
+    examples: |
+      - I prefer an [eco hotel](accommodation_type)
+      - find a [hostel](accommodation_type)
+      - I want a [guesthouse](accommodation_type)
+      - accommodation type should be [apartment](accommodation_type)
+      - please look for [eco lodge](accommodation_type)
+      - a [certified green hotel](accommodation_type) would be good
+      - [budget hotel](accommodation_type)
+      - [rural lodge](accommodation_type)
+      - I need a [business hotel](accommodation_type)
+      - maybe an [eco hostel](accommodation_type)
+
+  - intent: provide_user_location
+    examples: |
+      - my current location is [Berlin](location)
+      - I am currently in [Munich](location)
+      - I live near [Paris](location)
+      - user location [London](location)
+      - I am based in [Brno](location)
+      - I am in [Tunis](location)
+      - start from my location in [Hamburg](location)
+      - my city is [Stuttgart](location)
+
+  - intent: ask_transport_options
+    examples: |
+      - show me low carbon transport options
+      - compare train and flight emissions
+      - what is the greenest transport?
+      - recommend transport for this trip
+      - which transport mode should I use?
+      - give me transport recommendations
+      - can I go by train?
+      - is bus better than flying?
+      - show sustainable mobility options
+      - compare transport choices
+
+  - intent: ask_accommodation_options
+    examples: |
+      - recommend eco friendly hotels
+      - show green accommodation
+      - find sustainable places to stay
+      - I need an eco hotel
+      - give me accommodation options
+      - any certified green hotels?
+      - where should I stay sustainably?
+      - recommend a responsible hostel
+      - show low impact accommodation
+      - hotel options please
+
+  - intent: ask_carbon_footprint
+    examples: |
+      - calculate my carbon footprint
+      - estimate emissions for my trip
+      - how much CO2 will this journey produce?
+      - what is the carbon impact?
+      - show emissions for train and flight
+      - carbon footprint please
+      - estimate CO2 for my travel mode
+      - how green is this trip?
+      - calculate transport emissions
+      - tell me if this trip is low carbon
+
+  - intent: ask_cultural_experiences
+    examples: |
+      - recommend cultural experiences
+      - show local activities
+      - find responsible cultural tours
+      - what can I do with local communities?
+      - suggest authentic experiences
+      - eco friendly cultural activities
+      - recommend museums and local markets
+      - show sustainable tourism activities
+      - local food tour recommendations
+      - cultural experience options please
+
+  - intent: ask_privacy_notice
+    examples: |
+      - what happens to my data?
+      - explain privacy
+      - do you store personal data?
+      - show privacy notice
+      - GDPR information please
+      - how do you use my trip details?
+      - is this conversation private?
+      - privacy policy
+
+  - intent: ask_accessibility_support
+    examples: |
+      - do you support accessibility?
+      - accessibility options
+      - can screen readers use this?
+      - is the interface accessible?
+      - I need accessible travel planning
+      - explain accessibility support
+      - can you avoid colour only labels?
+
+  - intent: request_human_handover
+    examples: |
+      - I want to talk to a human advisor
+      - connect me to a person
+      - hand me over to a human
+      - I need human help
+      - can an advisor review this?
+      - escalate this conversation
+      - I do not understand, give me a person
+      - transfer me to support
+      - I want expert travel advice
+      - please arrange human handover
+
+  - intent: nlu_fallback
+    examples: |
+      - green place thing maybe not sure
+      - trip stuff around there somehow
+      - I want something nice, you know?
+      - compare the thing with the other thing
+      - maybe do the sustainable travel thing but different
+      - not sure how to explain what I want
+
+  - intent: thank_you
+    examples: |
+      - thank you
+      - thanks
+      - many thanks
+      - great, thanks
+      - that helps
+      - appreciated
+      - thanks for the recommendations
+      - thank you very much
+
+  - intent: out_of_scope
+    examples: |
+      - what is the weather on Mars?
+      - write my biology essay
+      - order pizza for me
+      - book a medical appointment
+      - what is the stock price of Tesla?
+      - tell me a joke about politics
+      - solve my tax problem
+      - I want to buy a laptop
+      - play music
+      - explain quantum mechanics

@@ -1,0 +1,31 @@
+services:
+  rasa:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.rasa
+    ports:
+      - "5005:5005"
+    volumes:
+      - ../models:/app/models
+    depends_on:
+      - action_server
+
+  action_server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.actions
+    ports:
+      - "5055:5055"
+    env_file:
+      - ../.env.example
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - RASA_REST_URL=http://rasa:5005/webhooks/rest/webhook
+    depends_on:
+      - rasa

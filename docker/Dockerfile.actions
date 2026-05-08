@@ -1,0 +1,9 @@
+FROM rasa/rasa-sdk:3.6.2
+
+WORKDIR /app
+USER root
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir python-dotenv requests
+COPY actions ./actions
+USER 1001
+CMD ["start", "--actions", "actions"]

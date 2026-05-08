@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Travel Advisor Webchat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4faf7;
+      color: #173b2f;
+    }
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #dff5e8;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <span class="badge">Eco Travel Advisor</span>
+    <h1>Conversational Agent for Sustainable Tourism Planning</h1>
+    <p>This page uses Rasa Webchat and connects to the local Rasa REST endpoint.</p>
+    <p>Privacy: do not enter sensitive personal information in this academic demo.</p>
+    <p>Accessibility: carbon labels should always be written as text as well as shown with colour.</p>
+  </main>
+
+  <script>
+    !(function () {
+      let e = document.createElement("script"), t = document.head || document.getElementsByTagName("head")[0];
+      e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js";
+      e.async = true;
+      e.onload = () => {
+        window.WebChat.default({
+          title: "Eco Travel Advisor",
+          subtitle: "Sustainable tourism planning",
+          initPayload: "/greet",
+          socketUrl: "http://localhost:5005",
+          socketPath: "/socket.io/",
+          customData: { language: "en" },
+          params: { storage: "session" },
+          showFullScreenButton: true,
+        }, null);
+      };
+      t.insertBefore(e, t.firstChild);
+    })();
+  </script>
+</body>
+</html>

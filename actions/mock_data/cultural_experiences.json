@@ -1,0 +1,57 @@
+[
+  {
+    "id": "exp_ams_001",
+    "name": "Local Food Market Walk",
+    "destination": "Amsterdam",
+    "category": "food culture",
+    "price": 35,
+    "carbon_kg": 1.2,
+    "community_benefit": 90,
+    "relevance": 0.93,
+    "description": "Small group walking tour focused on local producers and seasonal food."
+  },
+  {
+    "id": "exp_ams_002",
+    "name": "Canal Heritage by Electric Boat",
+    "destination": "Amsterdam",
+    "category": "heritage",
+    "price": 42,
+    "carbon_kg": 2.6,
+    "community_benefit": 76,
+    "relevance": 0.86,
+    "description": "Low emission cultural route explaining water management and local history."
+  },
+  {
+    "id": "exp_lju_001",
+    "name": "Bee Keeping Heritage Visit",
+    "destination": "Ljubljana",
+    "category": "rural culture",
+    "price": 55,
+    "carbon_kg": 1.8,
+    "community_benefit": 95,
+    "relevance": 0.92,
+    "description": "Community run experience showing Slovenian beekeeping traditions and biodiversity."
+  },
+  {
+    "id": "exp_cph_001",
+    "name": "Copenhagen Cycling Architecture Tour",
+    "destination": "Copenhagen",
+    "category": "urban sustainability",
+    "price": 48,
+    "carbon_kg": 0.4,
+    "community_benefit": 80,
+    "relevance": 0.89,
+    "description": "Guided bicycle tour explaining cycling infrastructure and sustainable urban design."
+  },
+  {
+    "id": "exp_global_001",
+    "name": "Responsible Local Walking Tour",
+    "destination": "Any",
+    "category": "local culture",
+    "price": 30,
+    "carbon_kg": 0.6,
+    "community_benefit": 82,
+    "relevance": 0.78,
+    "description": "Mock fallback walking tour supporting local guides."
+  }
+]

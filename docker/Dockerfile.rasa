@@ -1,0 +1,12 @@
+FROM rasa/rasa:3.6.20-full
+
+WORKDIR /app
+COPY config.yml domain.yml credentials.yml endpoints.yml ./
+COPY docker/endpoints.docker.yml ./endpoints.docker.yml
+COPY data ./data
+COPY actions ./actions
+USER root
+RUN mkdir -p /app/models
+USER 1001
+ENTRYPOINT []
+CMD ["bash", "-lc", "rasa train && rasa run --enable-api --cors '*' --debug --endpoints endpoints.docker.yml --credentials credentials.yml"]
